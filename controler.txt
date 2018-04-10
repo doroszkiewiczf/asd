@@ -1,0 +1,64 @@
+package application;
+
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.*;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+
+public class Controller implements Initializable {
+
+	@FXML private TableView<Student> table;
+	@FXML private TableColumn<Student, String> name;
+	@FXML private TableColumn<Student, String> score;
+	@FXML private TableColumn<Student, String> grade;
+	
+	@FXML private Label loadStatusLabel;
+	
+	@FXML private TextField answersField;
+	@FXML private TextField sheetField;
+	
+	public ObservableList<Student> list = FXCollections.observableArrayList();
+	public ArrayList<String []> answerSheet = new ArrayList<String[] >();
+	public String[] answers = null ;
+	
+	//public void loadAnswers
+	
+	public void showTable(ActionEvent event) {
+		
+	}
+	
+	
+	
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		
+		//ArrayList<String []> answerSheet = new ArrayList<String[] >();
+		//String[] answers = null ;
+		
+		Results res = new Results();
+		
+		answerSheet = res.loadAnswers();
+		answers = res.loadSheet();
+		
+		 ArrayList<String []> scoreList = new ArrayList<String[] >();
+		
+		scoreList = res.getScoreList(answerSheet, answers);
+		for (String[] x: scoreList)
+        {
+			list.add(new Student(x[0],x[1],x[2]));
+        }
+		
+		name.setCellValueFactory(new PropertyValueFactory<Student, String>("name"));
+		score.setCellValueFactory(new PropertyValueFactory<Student, String>("score"));
+		grade.setCellValueFactory(new PropertyValueFactory<Student, String>("grade"));
+		table.setItems(list);
+		
+	}
+
+}
