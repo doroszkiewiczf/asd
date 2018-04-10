@@ -1,0 +1,198 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+% Wersja: 06.11.2017
+\documentclass{article}
+
+
+\usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{natbib} % Required to change bibliography style to APA
+\usepackage{amsmath} % Required for some math elements 
+\setlength\parindent{12pt} % Removes all indentation from paragraphs
+%\usepackage{times} % Uncomment to use the Times New Roman font
+
+\usepackage[export]{adjustbox}
+
+\usepackage[utf8]{inputenc} % Język polski
+\usepackage{polski}
+\usepackage[polish]{babel}
+
+\usepackage[top=1in, bottom=1.25in, left=1.25in, right=1.25in]{geometry} % Marginesy
+\usepackage{listings} % Kod programu
+\usepackage{indentfirst} % Wcięcie przy pomocy \par
+\usepackage{multicol} % Kilka kolumn dla itemize
+\usepackage[table,xcdraw]{xcolor} % Dla tabel
+\usepackage{float}
+\usepackage{wrapfig}
+%\renewcommand{\labelenumi}{\alph{enumi}.} % Zamienia litery w enumerate na a, b, c, ...
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{Nokia - Steal the Treasure Game \\ \textit{ }} % Title
+\date{06.03.2018}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\begin{tabular}{l r}
+Prowadzący: & Dr inż. Tomasz Kubik
+\end{tabular}
+\end{center}
+
+\tableofcontents
+
+%----------------------------------------------------------------------------------------
+%	SECTION 0
+%----------------------------------------------------------------------------------------
+
+%\begin{multicols}{2}
+%	\begin{itemize}
+%		\item 
+%	\end{itemize}
+%\end{multicols}
+
+%\newpage
+%\section{Tytuł}} 
+%\subsection{Tytuł}
+%\par Tekst
+
+%\begin{itemize}
+%	\item\textit{Tekst} - opis
+%\end{itemize}
+
+%\begin{enumerate}
+%	\item Opis
+%\end{enumerate}
+
+%\begin{center}
+%	\includegraphics[scale=0.6, center]{nazwa_pliku}
+%\end{center}
+
+%\begin{lstlisting}[basicstyle=\small]
+%	kod programu;
+%\end{lstlisting}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+\newpage
+\section{Aplikacja webowa - edytor map}
+\subsection{Ogólny opis}
+\par Aplikacja stanowi swego rodzaju edytor map i pozwola użytkownikowi na stworzenie własnej mapy, która następnie będzie możliwa do użycia w grze "Steal the Treasure Game". Edytor map pozwola na wykorzystanie zdefioniowanych w grze obiektów i ustawienie ich na dowolnej pozycji na planszy edytowania, która reprezentuje widok planszy z górny. Na podstawie wygenerowanej mapy zostanie stworzony plik .JSON, który zostanie wykorzystany do wygenerowania mapy w grze. Możliwe jest również wygenerowanie losowej mapy, którą również można edytować.
+
+\subsection{Technologie }
+\par Aplikacja napisana jest w języku JavaScript w oparciu o bibliotekę React.js, która pozwala na szybkie towrzenie prostych interfejsów graficznych stron internetowych.
+
+\par Użyte zostanie oprogramowanie (najnowsze dostępne wersje):
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|l|l|}
+		\hline
+		Nazwa              & Wersja & Zastosowanie    \\ \hline
+		Node.js	           & 8.10.0 & IDE     		  \\ \hline
+		npm	   	           & 5.6.0  & IDE             \\ \hline
+		Visual Studio Code & 1.20   & Edytor tekstowy \\ \hline
+	\end{tabular}
+\end{table}
+
+\subsection{Konfiguracja środowiska}
+\subsubsection{Node.js}
+
+Darmowe środowisko do uruchomienia aplikacji napisanych w JavaScript. Instalacja nie wymaga żadnej rejestracji i możliwe jest do pobrania bezpośrednio z oficjalnej strony internetowej - https://nodejs.org/en/ 
+
+\subsubsection{Npm}
+ 
+Domyślny manager pakietów dla środowiska Node.js. Instalacja npm jest automatyczna w momencie instalacji najnowszej wersji Node.js ze strony internetowej. Zalecane jest skonfigurowanie rejestrów, bez którego często występują problemy z uruchomieniem. Konfiguracja odbywa się z poziomu wiersza poleceń, gdzie należy wprowadzić następujące polecenie:  
+\begin{lstlisting}
+npm config set registry http://registry.npmjs.org/
+\end{lstlisting}
+
+
+\subsubsection{Visual Studio Code}
+
+Edytor tekstu jest darmowy i nie wymaga dodatkowej rejestracji. Do pobrania z oficjanlnej strony https://code.visualstudio.com/
+
+\subsection{Uruchomienie aplikacji}
+
+Aplikacja uruchamiana jest z wiersza poleceń. Należy przejść do katalogu w którym znajduje się kod aplikacji wraz ze wszystkimi źródłami - map creator. Następnie uruchomić w tym katalogu wiersz poleceń i wpisać: 
+\begin{lstlisting}
+npm i npm
+\end{lstlisting}
+Po kilku chwilach nasz kod zostanie skompilowany. Następnie należy użyć polecenia:
+\begin{lstlisting}
+npm start
+\end{lstlisting}
+W tym momencie nasza aplikacja powinna automatycznie się uruchomić w naszej przeglądarce jako localhost na domyślnym porcie 3000. Adres lokalny strony wraz z portem jest wyświetlany po wpisaniu powyższej komendy.
+%----------------------------------------------------------------------------------------
+%	SECTION 2
+%----------------------------------------------------------------------------------------
+\newpage
+\section{Gra - Steal the Treasure Game}
+\subsection{Ogólny opis}
+\par Gracz wcieli się w bohatera, który będzie musiał znaleźć skarb, do którego droga będzie strzeżona przez strażników. Gracz będzie musiał przemknąć się pomiędzy strażnikami wykorzystując rozmieszczenie objektów na mapie. Mapy będą tworzone przy pomocy aplikacji webowej. 
+
+\subsection{Technologie}
+
+Gra zostanie stworzona jest przy użyciu silnika Unity - pozwala on na łatwe tworzenie gier. Większość operacji odbywa się przez interfejs edytora; skrypty pisane są w języku C\#. Oprogramowanie Unity jest darmowe dla projektów niekomercyjnych. 
+
+\par Użyte zostanie oprogramowanie:
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|l|l|}
+		\hline
+		Nazwa              & Wersja & Zastosowanie    \\ \hline
+		Unity              & 2017.3 & Silnik gry      \\ \hline
+		Visual Studio      & 15.6   & IDE             \\ \hline
+		Visual Studio Code & 1.20   & Edytor tekstowy \\ \hline
+        Blender			   & 2.79b  & Modelowanie graficzne \\ \hline
+	\end{tabular}
+\end{table}
+
+\subsection{Konfiguracja środowiska}
+\subsubsection{Unity}
+
+Unity jest darmowe dla projektów niekomercyjnych, a więc do zainstalowania środowiska potrzebne będzie utworzenie konta i zalogowanie, następnie należy wypełnić formularz do uzyskania darmowej licencji. Pobranie środowiska możliwe jest z oficjalnej strony https://unity3d.com/. 
+
+\subsubsection{Visual Studio }
+
+Visual Studio w wersji 15.6, możliwy jest do pobrania na oficjalnej stronie microsoftu przy użyciu konta, które zapewnia nam uczelnia. 
+
+\subsubsection{Blender }
+
+Blender jest darmowym narzędziem do tworzenia grafiki trójwymiarowej. Pozwala na tworzenie zarówno obiektów statycznych, jak i animacji. Najnowsza wersja dostępna jest do pobrania z oficjalnej strony blendera bez żadnej rejestracji.  
+
+\subsection{Uruchomienie gry}
+
+Gra możliwa jest do uruchomienia bez użycia środowiska UNITY, należy jedynie uruchomić odpowiedni plik .exe, zawierający grę. Aby umożliwić konfigurację i edytować grę należy uruchomić UNITY, a następnie wybrać katalog, w którym znajduje się gra.
+
+%----------------------------------------------------------------------------------------
+%	SECTION 3
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	SECTION 4
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+%\newpage
+%\bibliographystyle{apalike}
+%\begin{thebibliography}{9}
+%
+%\bibitem{wikipediacluster} 
+%Wikipedia: Computer cluster,
+%\\\texttt{https://en.wikipedia.org/wiki/Computer\_cluster}
+%	
+%\bibitem{wikipediasieve} 
+%Wikipedia: Sieve of Erastosthenes,
+%\\\texttt{https://en.wikipedia.org/wiki/Sieve\_of\_Eratosthenes}
+%
+%\end{thebibliography}
+
+%----------------------------------------------------------------------------------------
+\end{document}
