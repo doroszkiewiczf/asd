@@ -56,7 +56,7 @@ cd unity
 
 
 ## Authors
-- Mira Pawłowicz
+- Mirka Pawłowicz
 - Sebastian Łągiewski
 - Jan Pajdak
 - Wojciech Słowiński
