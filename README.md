@@ -1,4 +1,4 @@
-# Innovativeproject -Steal the Treasue 
+# Innovativeproject -Steal the Treasue Game
 ## Description
 
 The project consists of two main parts:
