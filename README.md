@@ -31,7 +31,7 @@ npm start
 - [DNSPython](http://www.dnspython.org/)
 - [Flask](http://flask.pocoo.org/)
 
-Start the app:
+Start the server:
 ```
 cd db\server
 ```
