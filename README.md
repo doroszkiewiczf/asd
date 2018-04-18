@@ -3,7 +3,7 @@
 
 The project consists of two main parts:
  - Steal the Treasure - game using the Unity game engine
- - Map creator -  web application which allows you create your own or random map for the game
+ - Map creator -  web application which allows you to create your own or random map for the game
 
 ## Installation
 
