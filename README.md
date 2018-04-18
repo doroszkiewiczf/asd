@@ -34,6 +34,7 @@ npm start
 Start the server:
 ```
 cd db\server
+.\server
 ```
 #### Game
 Start the game:
