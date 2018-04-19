@@ -27,7 +27,7 @@ npm start
 ```
 #### Server:
 ##### Prerequisites:
-- [Python 3.6.5] (https://www.python.org/downloads/)
+- [Python 3.6.5](https://www.python.org/downloads/)
 - [PyMongo](https://api.mongodb.com/python/current/)
 - [DNSPython](http://www.dnspython.org/)
 - [Flask](http://flask.pocoo.org/)
