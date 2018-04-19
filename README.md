@@ -54,7 +54,7 @@ cd unity
 
 ## Technologies
 ### Web-app
-* [Node.js](https://nodejs.org/en/)
+* [Npm](https://www.npmjs.com/)
 * [React](https://reactjs.org/)
 * [MongoDB](https://www.mongodb.com/)
 
