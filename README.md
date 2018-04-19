@@ -54,10 +54,12 @@ cd unity
 
 ## Technologies
 ### Web-app
-* [Npm](https://www.npmjs.com/)
 * [React](https://reactjs.org/)
+* [JavaScript](https://www.javascript.com/)
+#### Database
 * [MongoDB](https://www.mongodb.com/)
-
+#### Server
+* [Python 3.6.5](https://www.python.org/)
 ### Game
 * [Unity](https://unity3d.com/)
 * [Blender3d](https://www.blender.org/)
