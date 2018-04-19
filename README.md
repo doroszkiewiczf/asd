@@ -22,11 +22,12 @@ git clone https://github.com/nokia-wroclaw/innovativeproject-treasure-game.git
 Start the app:
 ```
 cd map_creator
-npm i npm
+npm install
 npm start
 ```
 #### Server:
 ##### Prerequisites:
+- [Python 3.6.5] (https://www.python.org/downloads/)
 - [PyMongo](https://api.mongodb.com/python/current/)
 - [DNSPython](http://www.dnspython.org/)
 - [Flask](http://flask.pocoo.org/)
