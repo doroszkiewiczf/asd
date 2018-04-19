@@ -35,8 +35,15 @@ npm start
 Start the server:
 ```
 cd db\server
-.\server
+python server.py
 ```
+Start the client:
+
+```
+cd db\server
+python client.py maps
+```
+
 #### Game
 Start the game:
 ```
